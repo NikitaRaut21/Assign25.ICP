@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM SUM </title>
+    <style>
+        body {
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+             min-height:100vh ;
+        }
+        .container{
+            background-color: #fff;
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .app-title{
+            text-align: center;
+          
+        }
+        .num-input{
+            width: 90%;
+            display: block;
+            margin: 20px auto;
+            font-size: 20px;
+        }
+        .ans{
+            text-align: center;
+            font-size: 20px;
+
+        }
+        .btn{
+            width: 150px;
+            display: block;
+            margin: 10px auto;
+            font-size: 20px;
+            background-color: black;
+            color:#fff;
+            border-radius: 50px;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        @media screen and (max-width:768px){
+            .container{
+                width: 90px;
+            }
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h2 class="app-title">Calculate Area Of Reactangle</h2>
+    <div class="container">
+        <input type="text" placeholder="Enter length" class="num-input" id="num1">
+        <input type="text" placeholder="Enter breadth" class="num-input" id="num2">
+        <p class="ans" id="answer">
+          
+        </p>
+        <button type="button" class="btn" onclick="Calculate()">Calculate</button>
+        <button type="button" class="btn" onclick="Reset()">Reset</button>
+    </div>
+    <script>
+        function Calculate(){
+       const input1 = document.getElementById("num1");
+
+       const input2 = document.getElementById("num2");
+       const ansElement =document.getElementById("answer");
+
+       const sum =parseInt(input1.value) * parseInt (input2.value);
+        
+
+        ansElement.innerText =`Answer:${sum} `
+        }
+        function Reset(){
+            const input1 = document.getElementById("num1");
+
+            const input2 = document.getElementById("num2");
+
+            const ansElement =document.getElementById("answer");
+            input1.value="";
+            input2.value="";
+            ansElement.innerText="";
+
+        }
+    
+       
+
+
+        
+    </script>
+</body>
+</html>
